@@ -1,0 +1,5 @@
+#! /usr/bin/env ruby
+
+require "backupr/cleaner"
+
+Backupr::Cleaner.clean(ARGV[0])

@@ -1,8 +1,0 @@
-#! /usr/bin/env ruby
-
-require "backupr/cleaner"
-
-cleaner = Backupr::Cleaner.new(File.readlines("/Users/dennis/code/times.txt").map(&:chomp))
-cleaner.clean
-# puts cleaner.data.join("\n")
-# puts cleaner.data.count
