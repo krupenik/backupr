@@ -1,11 +1,10 @@
-# -*- encoding: utf-8 -*-
 require File.expand_path('../lib/backupr/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Dennis Krupenik"]
   gem.email         = ["dennis@krupenik.com"]
   gem.description   = %q{Backup management application}
-  gem.summary       = %q{Backupr is a backup bundling and management application}
+  gem.summary       = %q{Backupr is a backup management application}
   gem.homepage      = "https://github.com/krupenik/backupr"
 
   gem.files         = `git ls-files`.split($\)
@@ -14,8 +13,8 @@ Gem::Specification.new do |gem|
   gem.name          = "backupr"
   gem.require_paths = ["lib"]
   gem.version       = Backupr::VERSION
-  
+
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'minitest'
-  gem.add_development_dependency 'turn'
+  # gem.add_development_dependency 'minitest-focus'
 end
