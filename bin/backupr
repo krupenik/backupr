@@ -1,0 +1,32 @@
+#! /usr/bin/env ruby
+
+$:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
+
+require "optparse"
+require "backupr"
+
+options = {config: "/etc/backupr.conf"}
+opts = OptionParser.new do |opts|
+  opts.banner = <<-EOF
+Usage: backupr [-c <config file>] command
+
+  Commands:
+    backup
+
+  Options:
+EOF
+
+  opts.on("-cCONFIG", "--config-file CONFIG", "Configuration file (default: #{options[:config]})") do |x|
+    options[:config] = x
+  end
+end
+
+opts.parse!
+command = ARGV[0]
+
+unless Backupr::Commands.include? command
+  abort opts.help
+end
+
+Backupr.load_config options[:config]
+Backupr.send command
