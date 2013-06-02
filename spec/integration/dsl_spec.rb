@@ -12,7 +12,7 @@ describe Backupr do
 
   it "should be configurable via cool dsl" do
     subject.hosts.must_be_empty
-    
+
     subject.configure do |config|
       config.root = dir
     end

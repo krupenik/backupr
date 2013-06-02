@@ -14,10 +14,10 @@ describe Backupr do
     before do
       subject.clear
     end
-    
+
     it "should add hosts" do
       host = HostStub.new
-      
+
       subject.add_host host
       subject.hosts.must_equal Hash["test1", host]
     end
