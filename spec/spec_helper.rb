@@ -1,7 +1,2 @@
-begin
-  require "turn/autorun"
-rescue LoadError
-  require "minitest/autorun"
-end
-
-require "backupr"
+require 'minitest/autorun'
+# require 'minitest/focus'
